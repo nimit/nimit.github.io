@@ -1,0 +1,144 @@
+import {
+  Briefcase,
+  FolderGit2,
+  Rss,
+  Dot,
+  CircleDot,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { Work, Project } from "../cvTypes";
+
+interface TimelineProps {
+  items: { type: string; items: Work[] | Project[] };
+  title?: string;
+}
+
+function getCardIcon(type: string) {
+  switch (type) {
+    case "project":
+      return (
+        <div className="relative z-10 bg-[#fafafa] dark:bg-[#1a1a1a] flex items-center justify-center w-[18px] h-[18px] -ml-[3px] transition-colors group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-blue-400">
+          <FolderGit2 size={16} className="transition-colors" />
+        </div>
+      );
+    case "job":
+      return <Briefcase size={16} className="transition-colors" />;
+    case "blog":
+      return <Rss size={16} className="transition-colors" />;
+    default:
+      return (
+        <Dot
+          size={9}
+          className="rounded-full bg-gray-400 dark:bg-gray-500 transition-colors group-hover:bg-blue-500 dark:group-hover:bg-blue-400 -ml-[0px]"
+        />
+      );
+  }
+}
+
+function getWorkItem(item: Work): JSX.Element {
+  return (
+    <Link
+      to={item.url || "#"}
+      className="block -mt-1.5 p-4 rounded-lg transition-all hover:bg-white dark:hover:bg-[#242424] hover:shadow-sm"
+    >
+      <div className="flex items-center justify-between gap-4 mb-1">
+        <div className="flex items-center gap-2 min-w-0">
+          {item.endDate === "Present" && (
+            <span className="relative shrink-0 px-2 py-0.5 text-[11px] font-small bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full leading-none overflow-hidden">
+              CURRENT
+              <div className="absolute inset-0 w-3 h-full bg-white/40 dark:bg-white/10 skew-x-12 animate-shine" />
+            </span>
+          )}
+          <h3
+            className={`text-[15px] font-medium truncate transition-colors ${"group-hover:text-blue-600 dark:text-gray-200 dark:group-hover:text-blue-400"}`}
+          >
+            {item.name}
+          </h3>
+        </div>
+        <span className="text-xs font-medium text-gray-500 dark:text-gray-400 shrink-0">
+          {item.startDate === "Present"
+            ? "Present"
+            : `${item.startDate} - ${item.endDate}`}
+        </span>
+      </div>
+      <ul className="mt-2 space-y-1">
+        {item.responsibilities.map((responsibility, index) => (
+          <li
+            key={index}
+            className="flex items-start gap-2 text-[13px] text-gray-700 dark:text-gray-300 leading-relaxed"
+          >
+            <CircleDot className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
+            <span>{responsibility}</span>
+          </li>
+        ))}
+      </ul>
+    </Link>
+  );
+}
+
+function getProjectItem(item: Project): JSX.Element {
+  return (
+    <Link
+      to={item.url || item.github || "#"}
+      className="block -mt-1.5 p-4 rounded-lg transition-all hover:bg-white dark:hover:bg-[#242424] hover:shadow-sm"
+    >
+      <div className="flex items-center justify-between gap-4 mb-1">
+        <div className="flex items-center gap-2 min-w-0">
+          {item.isActive && (
+            <span className="relative shrink-0 px-2 py-0.5 text-[11px] font-small bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full leading-none overflow-hidden">
+              Active
+              <div className="absolute inset-0 w-3 h-full bg-white/40 dark:bg-white/10 skew-x-12 animate-shine" />
+            </span>
+          )}
+          <h3
+            className={`text-[15px] font-medium truncate transition-colors ${"group-hover:text-blue-600 dark:text-gray-200 dark:group-hover:text-blue-400"}`}
+          >
+            {item.name}
+          </h3>
+        </div>
+        <span className="text-xs font-medium text-gray-500 dark:text-gray-400 shrink-0">
+          {item.startDate === "Present"
+            ? "Present"
+            : `${item.startDate} - ${item.endDate}`}
+        </span>
+      </div>
+      <ul className="mt-2 space-y-1">
+        {item.highlights.map((highlight, index) => (
+          <li
+            key={index}
+            className="flex items-start gap-2 text-[13px] text-gray-700 dark:text-gray-300 leading-relaxed"
+          >
+            <CircleDot className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
+            <span>{highlight}</span>
+          </li>
+        ))}
+      </ul>
+    </Link>
+  );
+}
+
+export function Timeline({ items: { type, items }, title }: TimelineProps) {
+  const Icon = getCardIcon(type);
+  return (
+    <section>
+      <h2 className="text-lg font-medium mb-8 dark:text-white">{title}</h2>
+      <div className="relative">
+        {/* Vertical Timeline Line */}
+        <div className="absolute left-1 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700" />
+
+        <div className="space-y-8">
+          {items.map((item, index) => (
+            <div key={index} className="group relative pl-12">
+              {/* Timeline Marker */}
+              <div className="absolute left-0 top-[14px]">{Icon},</div>
+              {/* Card Content */}
+              {type === "work"
+                ? getWorkItem(item as Work)
+                : getProjectItem(item as Project)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
