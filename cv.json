@@ -48,6 +48,13 @@
       "studyType": "full-time",
       "startDate": "2023-08-20",
       "endDate": "2026-05-21",
+      "courses": [
+        "Analysis of Algorithms",
+        "Data Science Fundamentals",
+        "Storage Systems",
+        "Operating Systems",
+        "Database Systems"
+      ],
       "gpa": 3.89
     },
     {
@@ -58,10 +65,37 @@
       "studyType": "full-time",
       "startDate": "2019-08-20",
       "endDate": "2023-06-21",
+      "courses": [
+        "Data Structures",
+        "Algorithms",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Theory of Computation"
+      ],
       "gpa": 3.88
     }
   ],
   "work": [
+    {
+      "name": "Research Foundation for SUNY (with DL-RL)",
+      "url": "https://www.dl-rl.com/",
+      "startDate": "2025-06-01",
+      "endDate": "Present",
+      "position": "Research Assistant",
+      "location": {
+        "city": "Mumbai",
+        "state": "MH",
+        "country": "India"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Created a simulation-based evaluation framework for generalist robotic Vision Language Action (VLA) models.",
+        "Built a small library to create a large scale procedural generation pipeline for simulation data in Nvidia Isaac Sim.",
+        "Fine-tuned a diffusion transformer with a flow matching action head for the SO-100 robot embodiment based on the GR00T VLA by Nvidia."
+      ],
+      "additionalResponsibilities": [],
+      "stack": []
+    },
     {
       "name": "NeoDocs (YC S21)",
       "url": "https://linkedin.com/company/neodocs",
@@ -75,7 +109,7 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Developed a fault-tolerant, high-throughput MongoDB server from scratch, reducing query latency by 10x, and integrated this into legacy systems to save an estimated $10K annually.",
+        "Led transition from Firebase to a fault-tolerant, high-throughput MongoDB query server that reduced read latency by 10x with zero downtime saving $10K annually.",
         "Created a WebAssembly SDK integrating OpenCV.js that standardized image capture to 95% consistency across diverse devices and lighting conditions, expediting application prototyping by 20%.",
         "Developed an end-to-end data solution by building a scalable pipeline and an interactive dashboard. Pre-aggregated 1M+ data points from diverse sources to reduce load times by 60%, and directly contributed to the success of a $50K government project.",
         "Spearheaded a team of 3 to develop a cross-platform mobile app that reached 100K+ downloads and 35K+ monthly active users, achieving an average rating of 4.3 stars."
@@ -93,7 +127,7 @@
       "url": "https://linkedin.com/company/neodocs",
       "startDate": "2023-01-26",
       "endDate": "2023-05-25",
-      "position": "Software Engineer - Full Stack",
+      "position": "Flutter Developer Intern",
       "location": {
         "city": "Mumbai",
         "state": "MH",
@@ -101,10 +135,10 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Automated product usage reports and delivered insights that influenced C-suite decisions, directly contributing to securing $2M in funding by showcasing user growth.",
+        "Automated app statistics and analytics report generation and delivered insights that influenced C-suite decisions, directly contributing to securing $2M in funding.",
         "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching.",
         "Developed core features across multiple products and created a interactive UI component library, adopted by at least 2 additional projects to boost development time.",
-        "Leveraged BigQuery to analyze analytics data and extract key insights on app that streamlined product roadmap to support bi-weekly updates."
+        "Leveraged BigQuery to analyze analytics data and support A/B testing improving feature rollout time by 50% to 2 weeks."
       ],
       "additionalResponsibilities": [
         "Engineered a containerizable microservice that enabled Flutter server side rendering that cut 30+ development hours and fast-tracked revenue-generating features.",
@@ -116,10 +150,39 @@
   ],
   "projects": [
     {
+      "name": "Challenges Studio - Holistic SWE Evaluation Platform",
+      "isActive": true,
+      "type": "personal",
+      "stack": [
+        "Node.js",
+        "React.js",
+        "MongoDB",
+        "AWS",
+        "Digital Ocean"
+      ],
+      "description": "AI-native real-world evaluation platform for new grad SWEs",
+      "highlights": [
+        "Developed a web-based assessment platform (React, Node.js, MongoDB) with a custom cloud IDE that launched in under 1 second to deliver real-world engineering and system design challenges.",
+        "Led private beta launch and gathered actionable feedback from early adopters to bridge post-LLM skill gaps in new-graduate engineers.",
+        "Architected and deployed the full-stack application to a Linux VPS, achieving 99.9% uptime."
+      ],
+      "url": "https://challenges.studio",
+      "github": "",
+      "startDate": "Present",
+      "endDate": "Present"
+    },
+    {
       "name": "3x Hackathon Winner",
       "isActive": true,
       "type": "personal",
-      "stack": ["Python", "MongoDB", "OpenCV", "PyTorch", "AI Agents", "GenAI"],
+      "stack": [
+        "Python",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch",
+        "AI Agents",
+        "GenAI"
+      ],
       "description": "",
       "highlights": [
         "Won in 3 hackathons using cutting-edge CV, AI and agentic technologies. Served as team leader and presented the project to judges.",
@@ -135,7 +198,10 @@
       "name": "Polars (31.1k GitHub Stars)",
       "isActive": true,
       "type": "opensource",
-      "stack": ["Rust", "Python"],
+      "stack": [
+        "Rust",
+        "Python"
+      ],
       "description": "",
       "highlights": [
         "Created a feature pull request to Polars, a blazing fast, multithreaded DataFrame library written in Rust.",
@@ -150,7 +216,12 @@
       "name": "Tensor Parallelism",
       "isActive": true,
       "type": "research",
-      "stack": ["Python", "PyTorch", "DeepSpeed", "Distributed Systems"],
+      "stack": [
+        "Python",
+        "PyTorch",
+        "DeepSpeed",
+        "Distributed Systems"
+      ],
       "description": "",
       "highlights": [
         "Created an automated GPU profiling pipeline and used Nvidia Nsight to identify bottlenecks during inference.",
@@ -166,31 +237,52 @@
       "name": "HTML",
       "icon": "simple-icons:html5",
       "level": "Advanced",
-      "keywords": ["Web Development", "Frontend"]
+      "keywords": [
+        "Web Development",
+        "Frontend"
+      ]
     },
     {
       "name": "MongoDB",
       "icon": "simple-icons:mongodb",
       "level": "Beginner",
-      "keywords": ["Databases", "File", "Data Storage", "Backend"]
+      "keywords": [
+        "Databases",
+        "File",
+        "Data Storage",
+        "Backend"
+      ]
     },
     {
       "name": "PostgreSQL",
       "icon": "simple-icons:postgresql",
       "level": "Beginner",
-      "keywords": ["Backend", "Databases", "SQL", "Relational Database"]
+      "keywords": [
+        "Backend",
+        "Databases",
+        "SQL",
+        "Relational Database"
+      ]
     },
     {
       "name": "Git",
       "icon": "mdi:git",
       "level": "Advanced",
-      "keywords": ["Version Control", "Collaboration", "Source Code"]
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code"
+      ]
     },
     {
       "name": "Linux",
       "icon": "simple-icons:linux",
       "level": "Beginner",
-      "keywords": ["OS", "Scripting", "Automation"]
+      "keywords": [
+        "OS",
+        "Scripting",
+        "Automation"
+      ]
     }
   ],
   "languages": [
