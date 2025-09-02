@@ -66,7 +66,7 @@ export function Navigation() {
               <span className={`absolute -bottom-1 left-0 w-full h-[1.5px] bg-current transform transition-transform duration-200 ${location.pathname === '/projects' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link> */}
 
-            {createNavLink("resume", "resume")}
+            {createNavLink("resume", "Resume")}
 
             <button
               onClick={toggleTheme}
