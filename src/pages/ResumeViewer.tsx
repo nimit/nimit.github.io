@@ -97,9 +97,10 @@
 //? V1
 
 export function ResumeViewer() {
+  const resumePath = "/nimit-resume.pdf";
   return (
     <object
-      data="/static/nimit-resume.pdf"
+      data={resumePath}
       type="application/pdf"
       width="100%"
       height="100%"
@@ -107,11 +108,7 @@ export function ResumeViewer() {
     >
       <p>
         Your browser does not support PDFs.
-        <a
-          href="/static/nimit-resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={resumePath} target="_blank" rel="noopener noreferrer">
           Download the PDF
         </a>
         .

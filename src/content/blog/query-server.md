@@ -1,7 +1,7 @@
 ---
 title: "Optimizing reads by 10x: Dedicated Query Server"
 date: 2025-09-01
-tag: infrastructure
+tag: Tech
 description: "An account of the multi-tenant, eventually consistent, role-based access system I built at NeoDocs that allowed for observing and aggregating 1M+ datapoints."
 ---
 
@@ -17,7 +17,7 @@ I come across the lesson "don't reinvent the wheel" quite often (most recently i
 
 Sparing the low-level details, the whole system is a bunch of functions saving to a message queue (think Kafka but way, way off-brand) feeding into a dedicated MongoDB server.
 
-![System Architecture Image](/static/blog/query-server/fig1-dark.png)
+![System Architecture Image](/blog/query-server/fig1-dark.png)
 
 ##### The Bunch of Functions
 
