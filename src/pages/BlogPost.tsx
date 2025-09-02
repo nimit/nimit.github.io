@@ -3,12 +3,14 @@ import { ArrowLeft } from "lucide-react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { BlogPost as BlogPostType } from "../types";
 import { getPostBySlug } from "../utils/blog";
+import { useTheme } from "../context/ThemeContext";
 
 export function BlogPost() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -43,6 +45,43 @@ export function BlogPost() {
 
     loadPost();
   }, [slug, navigate]);
+
+  useEffect(() => {
+    console.log("Change image mode called");
+    if (!post || !post.content) return;
+    const contentDiv = document.querySelector("#blog-content");
+    console.log("Got content div");
+    if (!contentDiv) return;
+
+    const images = contentDiv.querySelectorAll("img");
+
+    images.forEach((img) => {
+      const originalSrc = img.getAttribute("src");
+      if (!originalSrc) return;
+
+      const isLight = originalSrc.includes("-light");
+      const isDark = originalSrc.includes("-dark");
+
+      const currentTheme = theme === "dark" ? "dark" : "light";
+
+      const oppositeTheme = currentTheme === "dark" ? "light" : "dark";
+
+      if (
+        (currentTheme === "dark" && isLight) ||
+        (currentTheme === "light" && isDark)
+      ) {
+        const newSrc = originalSrc.replace(oppositeTheme, currentTheme);
+
+        const testImage = new Image();
+        testImage.onload = () => {
+          img.src = newSrc;
+        };
+        // Do nothing if the image fails to load
+        testImage.onerror = () => {};
+        testImage.src = newSrc;
+      }
+    });
+  }, [theme, post, post?.content]);
 
   if (loading) {
     return (
@@ -84,6 +123,7 @@ export function BlogPost() {
           </div>
 
           <div
+            id="blog-content"
             className="text-gray-700 dark:text-gray-300 leading-relaxed
     [&>p]:mb-6 
     [&>h1]:text-2xl [&>h1]:font-medium [&>h1]:mb-4 

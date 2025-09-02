@@ -6,7 +6,7 @@
     "email": "nimit.shah622@gmail.com",
     "url": "https://www.nimit.github.io/",
     "subtitle": "Generalist by Trade, Curious by Heart",
-    "summary": "",
+    "summary": "SWE & AI Infra",
     "location": {
       "city": "Stony Brook",
       "state": "NY",
@@ -77,7 +77,7 @@
   ],
   "work": [
     {
-      "name": "Research Foundation for SUNY (with DL-RL)",
+      "name": "Stony Brook University (with DL-RL)",
       "url": "https://www.dl-rl.com/",
       "startDate": "2025-06-01",
       "endDate": "Present",
@@ -210,7 +210,7 @@
       "url": "https://github.com/pola-rs/polars/pull/20019",
       "github": "https://github.com/pola-rs/polars/pull/20019",
       "startDate": "2024-12",
-      "endDate": "Present"
+      "endDate": "2024-12"
     },
     {
       "name": "Tensor Parallelism",

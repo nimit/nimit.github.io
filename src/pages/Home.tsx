@@ -1,6 +1,7 @@
 import { Github, Link, Linkedin, Twitter, Mail } from "lucide-react";
 import { cv } from "../cv";
 import { Timeline } from "../components/Timeline";
+import coverGif from "@/assets/cover.gif";
 
 export function Home() {
   return (
@@ -41,6 +42,16 @@ export function Home() {
           })}
         </div>
       </header>
+
+      <figure className="flex flex-col items-center mb-8">
+        <img className="h-100" src={coverGif} alt="cover" />
+        <figcaption className="text-sm text-gray-500 mt-2">
+          "Nimit Shah is a man of focus, commitment and sheer f**king will" -
+          someone, hopefully soon
+          {/* A quote from John Wick (2014) */}
+        </figcaption>
+      </figure>
+
       {cv.work && (
         <Timeline items={{ type: "work", items: cv.work }} title="work" />
       )}
