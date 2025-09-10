@@ -17,7 +17,7 @@ I come across the lesson "don't reinvent the wheel" quite often (most recently i
 
 Sparing the low-level details, the whole system is a bunch of functions saving to a message queue (think Kafka but way, way off-brand) feeding into a dedicated MongoDB server.
 
-![System Architecture Image](/blog/query-server/fig1-dark.png)
+![System Architecture Image](/blog/query-server/architecture-dark.png)
 
 ##### The Bunch of Functions
 

@@ -12,7 +12,11 @@ But, I look at it in a more positive way. In the world of advanced, genetically 
 
 Back on the ground, writing blogs has a few real advantages that I think make it worth the time spent.
 
-- It allows me to practice enunciating whatever I am thinking into words. Communication is always important regardless of the career (then again, maybe we are moving towards a future where everyone has an AI rewriter attached to all input devices and everyone speaks in broken sentences trying to make the model understand - a future where no one talks normally because "_Why waste time say lot word when few word do trick?_" well predicted Kevin Malone?).
+- It allows me to practice enunciating whatever I am thinking into words. Communication is always important regardless of the career (then again, maybe we are moving towards a future where everyone has an AI rewriter attached to all input devices and everyone speaks in broken sentences trying to make the model understand - a future where no one talks normally...).
+
+![Quote from Kevin Malone in "The Office"](/blog/thoughts-on-ai/kevin.gif)
+well predicted Kevin Malone??!
+
 - I can share my experiences in a public setting hoping others notice me (especially important at the start of my career) and others learn from it (hopefully!)
 - I can look at how my thoughts/writing changed over time and that's f\*\*king cool!
 - I can polish my creativity and get ready for conversations while I gather enough courage to leave this dungeon.
