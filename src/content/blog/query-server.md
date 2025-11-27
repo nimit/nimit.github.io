@@ -15,7 +15,7 @@ I come across the lesson "don't reinvent the wheel" quite often (most recently i
 
 ### The Solution
 
-Sparing the low-level details, the whole system is a bunch of functions saving to a message queue (think Kafka but way, way off-brand) feeding into a dedicated MongoDB server.
+Sparing the low-level details, the whole system is a bunch of functions saving to a message queue (think Kafka but store-brand) feeding into a dedicated MongoDB server.
 
 ![System Architecture Image](/blog/query-server/architecture-dark.png)
 
@@ -27,12 +27,12 @@ We chose the latter because of two reasons:
 1. Reduced complexity and moving parts make the system easier to maintain in the long run. Recovery of the data in case of failure of the queue/missed updates is simpler.
 2. For our most frequent database write (at the time of a test), I observed that the same document was updated multiple times. This could be optimized by writing to MongoDB, only the latest version of the document.
 
-##### Message Queue (Off-Brand Kafka)
+##### Message Queue
 
 The dedicated server was primarily a query server, so we wanted to reduce the number of writes as much as possible. Using MongoDB's batch upsert operation along with a queue helped us achieve this goal.
 We used Firebase Realtime DB for storing the unsynchronized states between batch upserts to MongoDB. One of the requirements of the whole system was to be cost-effective and Firebase RealtimeDB charges based on the amount of data stored (instead of the number of writes as in Firestore), amounting to a grand total of $0 (because of the free tier :) for a short enough update window in its use as a transient store.
 
 ### Conclusion
 
-This was my first BIG project at NeoDocs with total autonomy - requiring database schema design (for logging and tracking updates), building failsafes, health checks, etc. and I am proud to share that this system has not yet failed in production and continues to power a small (but important) part of the company's operations. It is also particularly special for me because every component was thought out such that it it stuck to the requirements without incurring any additional costs and I also really liked the use of Realtime DB as a transient storage and queue (I wish I had come up with something so ingenious).
+This was my first BIG project at NeoDocs with total autonomy - requiring database schema design (for logging and tracking updates), building fail-safes, health checks, etc. and I am proud to share that this system has not yet failed in production and continues to power a small (but important) part of the company's operations. It is also particularly special for me because every component was thought out such that it it stuck to the requirements without incurring any additional costs and I also really liked the use of Realtime DB as a transient storage and queue (I wish I had come up with something so simple & ingenious).
 Unless you have this exact use-case, I wouldn't recommend even looking to create a system like this but maybe that is a part of the appeal too... a unique piece of software no one would ever recreate <3
