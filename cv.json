@@ -49,11 +49,11 @@
       "startDate": "2023-08-20",
       "endDate": "2026-05-21",
       "courses": [
-        "Analysis of Algorithms",
-        "Data Science Fundamentals",
-        "Storage Systems",
         "Operating Systems",
-        "Database Systems"
+        "Database Systems",
+        "Storage Systems",
+        "Analysis of Algorithms",
+        "Data Science Fundamentals"
       ],
       "gpa": 3.89
     },
@@ -79,19 +79,39 @@
     {
       "name": "Stony Brook University (with DL-RL)",
       "url": "https://www.dl-rl.com/",
-      "startDate": "2025-06-01",
+      "startDate": "2025-05-01",
       "endDate": "Present",
       "position": "Research Assistant",
       "location": {
-        "city": "Mumbai",
-        "state": "MH",
-        "country": "India"
+        "city": "Stony Brook",
+        "state": "NY",
+        "country": "US"
       },
       "highlight": "",
       "responsibilities": [
-        "Created a simulation-based evaluation framework for generalist robotic Vision Language Action (VLA) models.",
-        "Built a small library to create a large scale procedural generation pipeline for simulation data in Nvidia Isaac Sim.",
-        "Fine-tuned a diffusion transformer with a flow matching action head for the SO-100 robot embodiment based on the GR00T VLA by Nvidia."
+        "Maximized GPU hardware saturation by engineering a PyTorch multiprocessing harness, utilizing process-based parallelism to increase simulation throughput by 30%.",
+        "Developed a standardized evaluation suite for Isaac Sim, leveraging procedural domain randomization to quantify agent robustness across stochastically varied environments.",
+        "Fine-tuned a Diffusion Transformer with a flow-matching action head, adapting the Nvidia GR00T architecture for generalized embodiment control."
+      ],
+      "additionalResponsibilities": [],
+      "stack": []
+    },
+    {
+      "name": "Stony Brook University",
+      "url": "",
+      "startDate": "2024-08-01",
+      "endDate": "Present",
+      "position": "Independent Researcher @ PACE Lab",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY",
+        "country": "US"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Developed the first Tensor Parallel (TP) implementation for Mamba SSMs, outperforming FSDP baselines by 40% throughput.",
+        "Built an asynchronous inference engine that decouples compute from I/O, utilizing persistent background processes to minimize GPU idle time.",
+        "Engineered a hybrid Data & Tensor Parallel strategy for SSMs to enable scalable inference across multi-GPU nodes."
       ],
       "additionalResponsibilities": [],
       "stack": []
@@ -109,17 +129,12 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Led transition from Firebase to a fault-tolerant, high-throughput MongoDB query server that reduced read latency by 10x with zero downtime saving $10K annually.",
-        "Created a WebAssembly SDK integrating OpenCV.js that standardized image capture to 95% consistency across diverse devices and lighting conditions, expediting application prototyping by 20%.",
-        "Developed an end-to-end data solution by building a scalable pipeline and an interactive dashboard. Pre-aggregated 1M+ data points from diverse sources to reduce load times by 60%, and directly contributed to the success of a $50K government project.",
-        "Spearheaded a team of 3 to develop a cross-platform mobile app that reached 100K+ downloads and 35K+ monthly active users, achieving an average rating of 4.3 stars."
+        "Architected a multi-tenant analytics engine processing 5M+ records from 200K+ users, utilizing MongoDB Aggregation Pipelines and incremental caching to maintain sub-second latency.",
+        "Designed a hybrid storage architecture, syncing live Firestore writes to an eventually consistent MongoDB replica to offload complex dashboard queries, attaining 99.99% sync service uptime.",
+        "Accelerated prototyping velocity by 20% by encapsulating OpenCV logic into a WebAssembly (WASM) SDK, providing a standardized API that abstracts hardware complexity.",
+        "Deployed edge ML on mobile via quantized TFLite models, increasing capture accuracy by 80% through on-device pre-processing."
       ],
-      "additionalResponsibilities": [
-        "Introduced in-app tracking and multilingual, server-controlled ads that launched an app's first revenue channel through targeted cross-selling.",
-        "Designed and developed a camera plugin by integrating native and C++ (OpenCV) code, ensuring a consistent image capture experience, eliminating over 90% of camera errors, and saving an estimated 20 development hours per app.",
-        "Implemented edge ML in a Flutter app using a fine-tuned YOLO TFLite model with real-time visual overlays and haptic feedback, improving image capture accuracy by 80% using boundary detection.",
-        "Engineered a camera plugin that optimized exposure controls using computer vision, increasing successful captures by 30% and boosting Random Forest ensemble model efficiency."
-      ],
+      "additionalResponsibilities": [],
       "stack": []
     },
     {
@@ -135,23 +150,81 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Automated app statistics and analytics report generation and delivered insights that influenced C-suite decisions, directly contributing to securing $2M in funding.",
-        "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching.",
-        "Developed core features across multiple products and created a interactive UI component library, adopted by at least 2 additional projects to boost development time.",
-        "Leveraged BigQuery to analyze analytics data and support A/B testing improving feature rollout time by 50% to 2 weeks."
+        "Reduced cron job RAM usage by 75% by redesigning the schema to support atomic batch updates, eliminating O(N) in-memory collection scans.",
+        "Engineered a server-driven ad system with locale-aware caching, enabling dynamic pricing updates and cross-sell campaigns without requiring app store releases.",
+        "Developed scripts used to validate Key Performance Indicators (KPIs) for investors, providing data for the company's $2M Series A."
       ],
       "additionalResponsibilities": [
-        "Engineered a containerizable microservice that enabled Flutter server side rendering that cut 30+ development hours and fast-tracked revenue-generating features.",
-        "Optimized database performance by building targeted indexes and redesigning the schema, reducing batch update cron job memory usage by 75%.",
-        "Created a build and publish CI/CD pipeline that eliminated environment misconfiguration errors and maintained a bi-weekly release schedule."
+        "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching."
       ],
       "stack": []
     }
   ],
   "projects": [
     {
+      "name": "whatsinmypg: AI-Native PostgreSQL Extension",
+      "isActive": false,
+      "type": "personal",
+      "stack": [
+        "C",
+        "PostgreSQL",
+        "CMake"
+      ],
+      "description": "A PostgreSQL extension written in C++ that adds no-maintenance GenAI querying functionality using Clickhouse's AI SDK",
+      "highlights": [
+        "Integrated the ClickHouse AI SDK directly into PostgreSQL internals, enabling natural language querying of SQL tables without external middleware.",
+        "Engineered an internal schema cache to eliminate redundant catalog lookups, ensuring inference operations do not access the database.",
+        "Verified non-blocking execution via pgbench, sustaining 200 concurrent connections on a million-row dataset with zero throughput degradation."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/whatsinmypg",
+      "startDate": "2025-11",
+      "endDate": "2025-11"
+    },
+    {
+      "name": "Raft KV Store",
+      "isActive": false,
+      "type": "course",
+      "stack": [
+        "C++",
+        "Distributed Systems",
+        "RPC",
+        "Multithreading"
+      ],
+      "description": "An implementation of the Raft distributed consensus protocol for a simple key-value store",
+      "highlights": [
+        "Engineered a fault-tolerant KV store implementing Leader Election and Log Replication compliant with the Raft protocol for Prof. Shuai Mu's Database Systems graduate course.",
+        "Achieved a 20% throughput increase over the reference implementation by batching log entries to minimize RPC network round-trips."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/db-systems",
+      "startDate": "2025-10",
+      "endDate": "2025-10"
+    },
+    {
+      "name": "Systems Development",
+      "isActive": false,
+      "type": "course",
+      "stack": [
+        "C",
+        "Linux Kernel",
+        "Kernel Modules",
+        "VFS",
+        "Stackable FS"
+      ],
+      "description": "Course Projects from my Graduate Systems Courses",
+      "highlights": [
+        "Developed a custom loadable kernel module to profile process scheduling and CPU accounting via kernel hooks as part of the Graduate Operating Systems track.",
+        "Debugged Wrapfs (Stackable File System) in Prof. Erez Zadok's Storage course, patching a logic error where ACLs failed to propagate to child inodes."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/cse506",
+      "startDate": "2025-05",
+      "endDate": "2025-05"
+    },
+    {
       "name": "Challenges Studio - Holistic SWE Evaluation Platform",
-      "isActive": true,
+      "isActive": false,
       "type": "personal",
       "stack": [
         "Node.js",
@@ -162,14 +235,14 @@
       ],
       "description": "AI-native real-world evaluation platform for new grad SWEs",
       "highlights": [
-        "Developed a web-based assessment platform (React, Node.js, MongoDB) with a custom cloud IDE that launched in under 1 second to deliver real-world engineering and system design challenges.",
-        "Led private beta launch and gathered actionable feedback from early adopters to bridge post-LLM skill gaps in new-graduate engineers.",
-        "Architected and deployed the full-stack application to a Linux VPS, achieving 99.9% uptime."
+        "Architected an assessment platform using AWS Firecracker to provision isolated microVMs in under 1 second for secure code execution.",
+        "Implemented a custom in-memory LRU cache in Fastify to eliminate DB lookups for high-frequency read operations.",
+        "Conducted private beta testing to iterate on product features, positioning the platform to bridge skill gaps for early-career engineers by providing real-world system engineering challenges."
       ],
       "url": "https://challenges.studio",
       "github": "",
-      "startDate": "Present",
-      "endDate": "Present"
+      "startDate": "2025-05",
+      "endDate": "2025-05"
     },
     {
       "name": "3x Hackathon Winner",
@@ -191,8 +264,8 @@
       ],
       "url": "https://youtu.be/iB3p93S_x28",
       "github": "https://github.com/nimit/hopperHacks",
-      "startDate": "Present",
-      "endDate": "Present"
+      "startDate": "2025-03",
+      "endDate": "2023-01"
     },
     {
       "name": "Polars (31.1k GitHub Stars)",
