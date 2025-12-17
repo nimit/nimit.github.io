@@ -134,7 +134,10 @@
         "Accelerated prototyping velocity by 20% by encapsulating OpenCV logic into a WebAssembly (WASM) SDK, providing a standardized API that abstracts hardware complexity.",
         "Deployed edge ML on mobile via quantized TFLite models, increasing capture accuracy by 80% through on-device pre-processing."
       ],
-      "additionalResponsibilities": [],
+      "additionalResponsibilities": [
+        "Spearheaded a team of 3 to develop a cross-platform mobile app that reached 100K+ downloads and 35K+ monthly active users, achieving an average rating of 4.3 stars.",
+        "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching."
+      ],
       "stack": []
     },
     {
