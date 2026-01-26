@@ -98,7 +98,7 @@ export interface Language {
 export interface Project {
   name: string;
   isActive: boolean;
-  type: "personal" | "research" | "opensource";
+  type: "personal" | "research" | "opensource" | "course";
   stack: Array<Tech>;
   description: string;
   highlights: Bullets;

@@ -1,0 +1,378 @@
+{
+  "basics": {
+    "name": "Nimit Shah",
+    "label": "Software Engineer",
+    "image": "/pfp.webp",
+    "email": "nimit.shah622@gmail.com",
+    "url": "https://www.nimit.github.io/",
+    "subtitle": "Generalist by Trade, Curious by Heart",
+    "summary": "SWE & AI Infra",
+    "location": {
+      "city": "Stony Brook",
+      "state": "NY",
+      "country": "US"
+    },
+    "profiles": [
+      {
+        "network": "X / Twitter",
+        "icon": "ri:twitter-fill",
+        "username": "@nimitt0",
+        "url": "https://x.com/nimitt0"
+      },
+      {
+        "network": "LinkedIn",
+        "icon": "ri:linkedin-fill",
+        "username": "Nimit Shah",
+        "url": "https://linkedin.com/in/nimit-s"
+      },
+      {
+        "network": "GitHub",
+        "icon": "mdi:github",
+        "username": "nimit",
+        "url": "https://github.com/nimit"
+      },
+      {
+        "network": "Email",
+        "icon": "ri:mail-fill",
+        "username": "Nimit Shah",
+        "url": "mailto:nimit.shah622@gmail.com"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Stony Brook University",
+      "college": "Department of Computer Science",
+      "level": "graduate",
+      "degree": "Master of Science in Computer Science",
+      "studyType": "full-time",
+      "startDate": "2023-08-20",
+      "endDate": "2026-05-21",
+      "courses": [
+        "Operating Systems",
+        "Database Systems",
+        "Storage Systems",
+        "Analysis of Algorithms",
+        "Data Science Fundamentals"
+      ],
+      "gpa": 3.89
+    },
+    {
+      "institution": "Gujarat Technological University",
+      "college": "L.J. Institute of Engineering Technology",
+      "level": "undergraduate",
+      "degree": "Bachelor of Engineering in Computer Engineering",
+      "studyType": "full-time",
+      "startDate": "2019-08-20",
+      "endDate": "2023-06-21",
+      "courses": [
+        "Data Structures",
+        "Algorithms",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Theory of Computation"
+      ],
+      "gpa": 3.88
+    }
+  ],
+  "work": [
+    {
+      "name": "Stony Brook University (with DL-RL)",
+      "url": "https://www.dl-rl.com/",
+      "startDate": "2025-05-01",
+      "endDate": "Present",
+      "position": "Research Assistant",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY",
+        "country": "US"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Maximized GPU hardware saturation by engineering a PyTorch multiprocessing harness, utilizing process-based parallelism to increase simulation throughput by 30%.",
+        "Developed a standardized evaluation suite for Isaac Sim, leveraging procedural domain randomization to quantify agent robustness across stochastically varied environments.",
+        "Fine-tuned a Diffusion Transformer with a flow-matching action head, adapting the Nvidia GR00T architecture for generalized embodiment control."
+      ],
+      "additionalResponsibilities": [],
+      "stack": []
+    },
+    {
+      "name": "Stony Brook University",
+      "url": "",
+      "startDate": "2024-08-01",
+      "endDate": "Present",
+      "position": "Independent Researcher @ PACE Lab",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY",
+        "country": "US"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Developed the first Tensor Parallel (TP) implementation for Mamba SSMs, outperforming FSDP baselines by 40% throughput.",
+        "Built an asynchronous inference engine that decouples compute from I/O, utilizing persistent background processes to minimize GPU idle time.",
+        "Engineered a hybrid Data & Tensor Parallel strategy for SSMs to enable scalable inference across multi-GPU nodes."
+      ],
+      "additionalResponsibilities": [],
+      "stack": []
+    },
+    {
+      "name": "NeoDocs (YC S21)",
+      "url": "https://linkedin.com/company/neodocs",
+      "startDate": "2023-05-26",
+      "endDate": "2024-06-12",
+      "position": "Software Engineer - Full Stack",
+      "location": {
+        "city": "Mumbai",
+        "state": "MH",
+        "country": "India"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Architected a multi-tenant analytics engine processing 5M+ records from 200K+ users, utilizing MongoDB Aggregation Pipelines and incremental caching to maintain sub-second latency.",
+        "Designed a hybrid storage architecture, syncing live Firestore writes to an eventually consistent MongoDB replica to offload complex dashboard queries, attaining 99.99% sync service uptime.",
+        "Accelerated prototyping velocity by 20% by encapsulating OpenCV logic into a WebAssembly (WASM) SDK, providing a standardized API that abstracts hardware complexity.",
+        "Deployed edge ML on mobile via quantized TFLite models, increasing capture accuracy by 80% through on-device pre-processing."
+      ],
+      "additionalResponsibilities": [
+        "Spearheaded a team of 3 to develop a cross-platform mobile app that reached 100K+ downloads and 35K+ monthly active users, achieving an average rating of 4.3 stars.",
+        "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching."
+      ],
+      "stack": []
+    },
+    {
+      "name": "NeoDocs (YC S21)",
+      "url": "https://linkedin.com/company/neodocs",
+      "startDate": "2023-01-26",
+      "endDate": "2023-05-25",
+      "position": "Flutter Developer Intern",
+      "location": {
+        "city": "Mumbai",
+        "state": "MH",
+        "country": "India"
+      },
+      "highlight": "",
+      "responsibilities": [
+        "Reduced cron job RAM usage by 75% by redesigning the schema to support atomic batch updates, eliminating O(N) in-memory collection scans.",
+        "Engineered a server-driven ad system with locale-aware caching, enabling dynamic pricing updates and cross-sell campaigns without requiring app store releases.",
+        "Developed scripts used to validate Key Performance Indicators (KPIs) for investors, providing data for the company's $2M Series A."
+      ],
+      "additionalResponsibilities": [
+        "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching."
+      ],
+      "stack": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "whatsinmypg: AI-Native PostgreSQL Extension",
+      "isActive": false,
+      "type": "personal",
+      "stack": [
+        "C",
+        "PostgreSQL",
+        "CMake"
+      ],
+      "description": "A PostgreSQL extension written in C++ that adds no-maintenance GenAI querying functionality using Clickhouse's AI SDK",
+      "highlights": [
+        "Integrated the ClickHouse AI SDK directly into PostgreSQL internals, enabling natural language querying of SQL tables without external middleware.",
+        "Engineered an internal schema cache to eliminate redundant catalog lookups, ensuring inference operations do not access the database.",
+        "Verified non-blocking execution via pgbench, sustaining 200 concurrent connections on a million-row dataset with zero throughput degradation."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/whatsinmypg",
+      "startDate": "2025-11",
+      "endDate": "2025-11"
+    },
+    {
+      "name": "Raft KV Store",
+      "isActive": false,
+      "type": "course",
+      "stack": [
+        "C++",
+        "Distributed Systems",
+        "RPC",
+        "Multithreading"
+      ],
+      "description": "An implementation of the Raft distributed consensus protocol for a simple key-value store",
+      "highlights": [
+        "Engineered a fault-tolerant KV store implementing Leader Election and Log Replication compliant with the Raft protocol for Prof. Shuai Mu's Database Systems graduate course.",
+        "Achieved a 20% throughput increase over the reference implementation by batching log entries to minimize RPC network round-trips."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/db-systems",
+      "startDate": "2025-10",
+      "endDate": "2025-10"
+    },
+    {
+      "name": "Systems Development",
+      "isActive": false,
+      "type": "course",
+      "stack": [
+        "C",
+        "Linux Kernel",
+        "Kernel Modules",
+        "VFS",
+        "Stackable FS"
+      ],
+      "description": "Course Projects from my Graduate Systems Courses",
+      "highlights": [
+        "Developed a custom loadable kernel module to profile process scheduling and CPU accounting via kernel hooks as part of the Graduate Operating Systems track.",
+        "Debugged Wrapfs (Stackable File System) in Prof. Erez Zadok's Storage course, patching a logic error where ACLs failed to propagate to child inodes."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/cse506",
+      "startDate": "2025-05",
+      "endDate": "2025-05"
+    },
+    {
+      "name": "Challenges Studio - Holistic SWE Evaluation Platform",
+      "isActive": false,
+      "type": "personal",
+      "stack": [
+        "Node.js",
+        "React.js",
+        "MongoDB",
+        "AWS",
+        "Digital Ocean"
+      ],
+      "description": "AI-native real-world evaluation platform for new grad SWEs",
+      "highlights": [
+        "Architected an assessment platform using AWS Firecracker to provision isolated microVMs in under 1 second for secure code execution.",
+        "Implemented a custom in-memory LRU cache in Fastify to eliminate DB lookups for high-frequency read operations.",
+        "Conducted private beta testing to iterate on product features, positioning the platform to bridge skill gaps for early-career engineers by providing real-world system engineering challenges."
+      ],
+      "url": "https://challenges.studio",
+      "github": "",
+      "startDate": "2025-05",
+      "endDate": "2025-05"
+    },
+    {
+      "name": "3x Hackathon Winner",
+      "isActive": true,
+      "type": "personal",
+      "stack": [
+        "Python",
+        "MongoDB",
+        "OpenCV",
+        "PyTorch",
+        "AI Agents",
+        "GenAI"
+      ],
+      "description": "",
+      "highlights": [
+        "Won in 3 hackathons using cutting-edge CV, AI and agentic technologies. Served as team leader and presented the project to judges.",
+        "Winners: HopperHacks (Best Healthcare Project), HackNYU (Best use of Streamlit) & CodeOlympiad (placed 3rd + cash prize)",
+        "Honorable Mentions: Columbia DivHacks 24 (only use of Spectacles' Dual Lens), Devfolio Stranger Hacks (Most viewed and liked project)"
+      ],
+      "url": "https://youtu.be/iB3p93S_x28",
+      "github": "https://github.com/nimit/hopperHacks",
+      "startDate": "2025-03",
+      "endDate": "2023-01"
+    },
+    {
+      "name": "Polars (31.1k GitHub Stars)",
+      "isActive": true,
+      "type": "opensource",
+      "stack": [
+        "Rust",
+        "Python"
+      ],
+      "description": "",
+      "highlights": [
+        "Created a feature pull request to Polars, a blazing fast, multithreaded DataFrame library written in Rust.",
+        "Wrote unit tests and participated in architecture design discussions with the contributors."
+      ],
+      "url": "https://github.com/pola-rs/polars/pull/20019",
+      "github": "https://github.com/pola-rs/polars/pull/20019",
+      "startDate": "2024-12",
+      "endDate": "2024-12"
+    },
+    {
+      "name": "Tensor Parallelism",
+      "isActive": true,
+      "type": "research",
+      "stack": [
+        "Python",
+        "PyTorch",
+        "DeepSpeed",
+        "Distributed Systems"
+      ],
+      "description": "",
+      "highlights": [
+        "Created an automated GPU profiling pipeline and used Nvidia Nsight to identify bottlenecks during inference.",
+        "Modified Microsoft DeepSpeed library to pass custom runtime arguments to spawned processes.",
+        "Currenly working on creating a tensor parallelized implementation of the popular Mamba State Space Model architecture."
+      ],
+      "startDate": "2024-08",
+      "endDate": "Present"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "icon": "simple-icons:html5",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "icon": "simple-icons:mongodb",
+      "level": "Beginner",
+      "keywords": [
+        "Databases",
+        "File",
+        "Data Storage",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "simple-icons:postgresql",
+      "level": "Beginner",
+      "keywords": [
+        "Backend",
+        "Databases",
+        "SQL",
+        "Relational Database"
+      ]
+    },
+    {
+      "name": "Git",
+      "icon": "mdi:git",
+      "level": "Advanced",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code"
+      ]
+    },
+    {
+      "name": "Linux",
+      "icon": "simple-icons:linux",
+      "level": "Beginner",
+      "keywords": [
+        "OS",
+        "Scripting",
+        "Automation"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full Professional Proficiency"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Gujarati",
+      "fluency": "Native speaker"
+    }
+  ]
+}
