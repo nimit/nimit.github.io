@@ -81,7 +81,7 @@
       "url": "https://www.stonybrook.edu/",
       "startDate": "2025-05-01",
       "endDate": "Present",
-      "position": "Research Assistant",
+      "position": "Robotics Research Assistant",
       "location": {
         "city": "Stony Brook",
         "state": "NY",
@@ -169,7 +169,7 @@
   "projects": [
     {
       "name": "Domin: Synthetic Data Generator",
-      "isActive": false,
+      "isActive": true,
       "type": "personal",
       "stack": [
         "Python",
@@ -185,7 +185,7 @@
       "url": "",
       "github": "https://github.com/nimit/domin",
       "startDate": "2026-01",
-      "endDate": "2026-01"
+      "endDate": "Present"
     },
     {
       "name": "Mako: Distributed Database Optimization",
