@@ -15,25 +15,25 @@
     "profiles": [
       {
         "network": "Twitter",
-        "icon": "ri:twitter-fill",
+        "icon": "ri:twitter-line",
         "username": "@nimitt0",
         "url": "https://x.com/nimitt0"
       },
       {
         "network": "LinkedIn",
-        "icon": "ri:linkedin-fill",
+        "icon": "ri:linkedin-line",
         "username": "Nimit Shah",
         "url": "https://linkedin.com/in/nimit-s"
       },
       {
         "network": "GitHub",
-        "icon": "mdi:github",
+        "icon": "ri:github-line",
         "username": "nimit",
         "url": "https://github.com/nimit"
       },
       {
         "network": "Email",
-        "icon": "ri:mail-fill",
+        "icon": "ri:mail-line",
         "username": "Nimit Shah",
         "url": "mailto:nimit.shah622@gmail.com"
       }

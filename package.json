@@ -10,6 +10,7 @@
     "build": "tsc -b && vite build"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "front-matter": "^4.0.2",
     "lucide-react": "^0.474.0",
     "markdown-it": "^14.1.0",

@@ -1,29 +1,7 @@
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Link,
-  ArrowUpRight,
-} from "lucide-react";
+import { Icon } from "@iconify/react";
 import { cv } from "../cv";
 import { Timeline } from "../components/Timeline";
-
-function getProfileIcon(network: string) {
-  const iconClass = "transition-transform group-hover:scale-110";
-  switch (network.toLowerCase()) {
-    case "github":
-      return <Github size={18} className={iconClass} />;
-    case "linkedin":
-      return <Linkedin size={18} className={iconClass} />;
-    case "twitter":
-      return <Twitter size={18} className={iconClass} />;
-    case "email":
-      return <Mail size={18} className={iconClass} />;
-    default:
-      return <Link size={18} className={iconClass} />;
-  }
-}
+import { ArrowUpRight } from "lucide-react";
 
 export function Home() {
   return (
@@ -66,7 +44,10 @@ export function Home() {
               className="group flex items-center gap-1.5 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-200"
               aria-label={item.network}
             >
-              {getProfileIcon(item.network)}
+              <Icon
+                icon={item.icon}
+                className="w-[20px] h-[20px] transition-transform group-hover:scale-110"
+              />
               <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:inline">
                 {item.network}
               </span>
