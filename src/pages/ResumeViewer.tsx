@@ -62,7 +62,7 @@
 //             file="/static/nimit-resume.pdf"
 //             onLoadSuccess={onDocumentLoadSuccess}
 //             loading={
-//               <p className="text-gray-500 dark:text-gray-400">Loading PDF…</p>
+//               <p className="text-gray-500 dark:text-gray-300">Loading PDF…</p>
 //             }
 //             error={<p className="text-red-500">Failed to load PDF.</p>}
 //           >

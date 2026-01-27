@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Converts the path to a query string format that index.html can parse
+      (function () {
+        var pathSegmentsToKeep = 0; // For user.github.io sites
+        var location = window.location;
+        var path = location.pathname;
+        var search = location.search;
+        var hash = location.hash;
+
+        // Encode the path as a query parameter
+        var encodedPath =
+          path
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (search ? search.replace(/&/g, "~and~") : "");
+
+        location.replace(
+          location.protocol +
+            "//" +
+            location.hostname +
+            (location.port ? ":" + location.port : "") +
+            "/?/" +
+            encodedPath +
+            hash
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>Redirecting to <a href="/">home page</a>...</p>
+    </noscript>
+  </body>
+</html>

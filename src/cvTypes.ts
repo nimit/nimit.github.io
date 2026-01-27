@@ -23,6 +23,7 @@ export interface Basics {
   email: string;
   phone?: string;
   url: string;
+  subtitle?: string;
   summary: string;
   location: Location;
   profiles: Array<Profile>;

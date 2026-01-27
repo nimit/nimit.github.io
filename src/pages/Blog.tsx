@@ -86,7 +86,7 @@ export function Blog() {
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                   <h2 className={`text-[15px] font-medium transition-colors ${
                     visitedPosts.has(post.slug) 
-                      ? 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200' 
+                      ? 'text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-200' 
                       : 'dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400'
                   }`}>
                     {post.title}
@@ -96,11 +96,11 @@ export function Blog() {
                       </span>
                     )}
                   </h2>
-                  <time className="text-sm text-gray-500 dark:text-gray-400 shrink-0">
+                  <time className="text-sm text-gray-500 dark:text-gray-300 shrink-0">
                     {formatDate(post.date)}
                   </time>
                 </div>
-                <p className="text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-[13px] text-gray-600 dark:text-gray-300 leading-relaxed">
                   {post.description}
                 </p>
               </div>

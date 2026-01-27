@@ -14,7 +14,7 @@
     },
     "profiles": [
       {
-        "network": "X / Twitter",
+        "network": "Twitter",
         "icon": "ri:twitter-fill",
         "username": "@nimitt0",
         "url": "https://x.com/nimitt0"

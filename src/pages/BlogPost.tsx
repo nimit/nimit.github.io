@@ -101,7 +101,7 @@ export function BlogPost() {
       <div className="hidden lg:block fixed top-24 left-6 z-40">
         <Link
           to="/blog"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-200 transition-colors"
         >
           <ArrowLeft size={16} className="mr-1" />
           Back to Blog
@@ -115,7 +115,7 @@ export function BlogPost() {
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-300 mb-12">
             <time>{formatDate(post.date)}</time>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
               {post.tag}

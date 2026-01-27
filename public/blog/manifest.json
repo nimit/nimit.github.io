@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "thoughts-on-ai",
+    "title": "My thoughts on AI",
+    "date": "2025-09-03T00:00:00.000Z",
+    "description": "Journal style record of my (nascent) thoughts on AI",
+    "tag": "Tech",
+    "isNew": false
+  },
+  {
+    "slug": "query-server",
+    "title": "Optimizing reads by 10x: Dedicated Query Server",
+    "date": "2025-09-01T00:00:00.000Z",
+    "description": "An account of the multi-tenant, eventually consistent, role-based access system I built at NeoDocs that allowed for observing and aggregating 1M+ datapoints.",
+    "tag": "Tech",
+    "isNew": false
+  },
+  {
+    "slug": "welcome",
+    "title": "Welcome!",
+    "date": "2025-03-07T00:00:00.000Z",
+    "description": "Welcome to my portfolio",
+    "tag": "Life",
+    "isNew": false
+  }
+]
