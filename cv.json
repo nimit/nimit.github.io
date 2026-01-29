@@ -81,7 +81,7 @@
       "url": "https://www.stonybrook.edu/",
       "startDate": "2025-05-01",
       "endDate": "Present",
-      "position": "Robotics Research Assistant",
+      "position": "Robotics Research Engineer",
       "location": {
         "city": "Stony Brook",
         "state": "NY",
@@ -89,9 +89,9 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Engineered a PyTorch multiprocessing harness that increased synthetic data generation throughput by 30%.",
-        "Architected a standardized pipeline to test robotic models in simulation environments that cut testing cycles by 20%.",
-        "Trained a LLaMA-based continuous model to generate mechanical link designs; benchmarked path error to 3.7 mm."
+        "Engineered a PyTorch multiprocessing harness that increased synthetic data generation throughput by 30% utilizing idle GPUs through process-based parallelism.",
+        "Architected a standardized pipeline to test robotic models in simulated environments that cut testing cycles by 20%.",
+        "Trained a LLaMA-based continuous model to generate mechanical link designs; Improved model performance by 10%, modeling continuous input as Fourier descriptors."
       ],
       "additionalResponsibilities": [
         "Fine-tuned a Diffusion Transformer with a flow-matching action head, adapting the Nvidia GR00T architecture for generalized embodiment control."
@@ -112,8 +112,8 @@
       "highlight": "",
       "responsibilities": [
         "Developed the Tensor Parallel (TP) implementation for Mamba SSMs, outperforming FSDP throughput by 40%.",
-        "Built a multi-threaded inference engine that reduces end-to-end latency by 50% compared to HF transformers.",
-        "Created a hybrid parallel strategy for SSMs to mitigate collective communication in multi-GPU nodes; Achieved 10% higher average throughput than TP."
+        "Built a multi-threaded inference server that reduced end-to-end latency by 50% compared to HF transformers by optimizing model loading and data transport.",
+        "Created a hybrid parallel strategy for SSMs to mitigate the collective communication bottleneck in multi-GPU nodes; Achieved 10% higher average throughput than TP."
       ],
       "additionalResponsibilities": [
         "Enabled inference on heterogeneous GPU configurations by distributing compute loads proportional to available VRAM on uneven hardware."
@@ -133,7 +133,7 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Architected a multi-tenant, real-time analytics engine processing 5M+ records; achieved 650ms p90 latency.",
+        "Architected a multi-tenant, real-time analytics engine that achieved 5M+ records and achieved 650ms p90 latency using incremental caching.",
         "Developed a hybrid storage architecture syncing live Firestore writes to an eventually consistent MongoDB replica, offloading OLAP queries and attaining 99.99% sync service uptime.",
         "Redesigned DB schema to eliminate O(N) in-memory collection scans to reduce cron job memory usage by 75%."
       ],
