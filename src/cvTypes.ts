@@ -9,6 +9,7 @@ export interface CV {
   work?: Array<Work>;
   education?: Array<Education>;
   publications?: Array<Publication>;
+  honors?: Array<Honor>;
   interests?: Array<Interests>;
   projects?: Array<Project>;
   references?: Array<Reference>;
@@ -70,6 +71,14 @@ export interface Certificate {
   url: string;
 }
 
+export interface Honor {
+  name: string;
+  issuer: string;
+  date: DateStr;
+  url?: string;
+  summary?: string;
+}
+
 export interface Publication {
   name: string;
   publisher: string;
@@ -124,11 +133,15 @@ const TECH = {
   "Java": "simple-icons:java",
   "Python": "mdi:language-python",
   "JavaScript": "mdi:language-javascript",
+  "TypeScript": "simple-icons:typescript",
+  "C": "mdi:language-c",
+  "C++": "mdi:language-cpp",
   "SQL": "mdi:database",
   "HTML": "mdi:language-html5",
   "CSS": "mdi:language-css3",
   "Rust": "simple-icons:rust",
   "Bash": "mdi:console",
+  "Go": "simple-icons:go",
 
   // Technologies
   "MongoDB": "simple-icons:mongodb",
@@ -153,6 +166,10 @@ const TECH = {
   "Hugging Face": "simple-icons:huggingface",
   "BERT": "mdi:robot-outline",
   "Mamba": "mdi:snake",
+  "Qdrant": "simple-icons:qdrant",
+  "Tantivy": "mdi:text-search",
+  "DuckDB": "simple-icons:duckdb",
+  "Neo4j": "simple-icons:neo4j",
 
   // Dev Tools
   "Git": "mdi:git",

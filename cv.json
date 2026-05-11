@@ -46,7 +46,7 @@
       "level": "graduate",
       "degree": "Master of Science in Computer Science",
       "studyType": "full-time",
-      "startDate": "2023-08-20",
+      "startDate": "2024-08-20",
       "endDate": "2026-05-21",
       "courses": [
         "Operating Systems",
@@ -81,7 +81,7 @@
       "url": "https://www.stonybrook.edu/",
       "startDate": "2025-05-01",
       "endDate": "Present",
-      "position": "Robotics Research Engineer",
+      "position": "Research Assistant",
       "location": {
         "city": "Stony Brook",
         "state": "NY",
@@ -90,12 +90,10 @@
       "highlight": "",
       "responsibilities": [
         "Engineered a PyTorch multiprocessing harness that increased synthetic data generation throughput by 30% utilizing idle GPUs through process-based parallelism.",
-        "Architected a standardized pipeline to test robotic models in simulated environments that cut testing cycles by 20%.",
-        "Trained a LLaMA-based continuous model to generate mechanical link designs; Improved model performance by 10%, modeling continuous input as Fourier descriptors."
+        "Trained a beta-VAE with a FiLM-conditioned head to encode 33 mechanism types as images; achieved max-per-channel reconstruction MSE < 0.01 on 99.9% of samples.",
+        "Architected a standardized pipeline to test robotic models in simulated environments that cut testing cycles by 20%."
       ],
-      "additionalResponsibilities": [
-        "Fine-tuned a Diffusion Transformer with a flow-matching action head, adapting the Nvidia GR00T architecture for generalized embodiment control."
-      ],
+      "additionalResponsibilities": [],
       "stack": []
     },
     {
@@ -103,7 +101,7 @@
       "url": "https://www.pace.cs.stonybrook.edu/",
       "startDate": "2024-08-01",
       "endDate": "2025-12-18",
-      "position": "Independent Researcher",
+      "position": "Graduate Researcher",
       "location": {
         "city": "Stony Brook",
         "state": "NY",
@@ -111,13 +109,11 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Developed the Tensor Parallel (TP) implementation for Mamba SSMs, outperforming FSDP throughput by 40%.",
-        "Built a multi-threaded inference server that reduced end-to-end latency by 50% compared to HF transformers by optimizing model loading and data transport.",
+        "Developed the Tensor Parallel implementation for Mamba SSMs, achieving up to 4.0x throughput over FSDP on multi-GPU nodes.",
+        "Built a multi-threaded inference server for Mamba SSMs that cut end-to-end latency by 50% over naive HuggingFace transformers loading, via optimized weight loading and tensor transport.",
         "Created a hybrid parallel strategy for SSMs to mitigate the collective communication bottleneck in multi-GPU nodes; Achieved 10% higher average throughput than TP."
       ],
-      "additionalResponsibilities": [
-        "Enabled inference on heterogeneous GPU configurations by distributing compute loads proportional to available VRAM on uneven hardware."
-      ],
+      "additionalResponsibilities": [],
       "stack": []
     },
     {
@@ -133,13 +129,15 @@
       },
       "highlight": "",
       "responsibilities": [
-        "Architected a multi-tenant, real-time analytics engine that achieved 5M+ records and achieved 650ms p90 latency using incremental caching.",
+        "Architected a multi-tenant, real-time analytics engine serving 5M+ records at 650ms p90 query latency via incremental caching.",
         "Developed a hybrid storage architecture syncing live Firestore writes to an eventually consistent MongoDB replica, offloading OLAP queries and attaining 99.99% sync service uptime.",
         "Redesigned DB schema to eliminate O(N) in-memory collection scans to reduce cron job memory usage by 75%."
       ],
       "additionalResponsibilities": [
         "Spearheaded a team of 3 to develop a cross-platform mobile app that reached 100K+ downloads and 35K+ monthly active users, achieving an average rating of 4.3 stars.",
-        "Architected an OpenCV WASM SDK to provide a standardized API for building multi-platform applications; increased prototyping velocity by 20%."
+        "Architected an OpenCV WASM SDK that standardized image capture to 95% consistency across diverse cameras and lighting conditions; increased prototyping velocity by 20%.",
+        "Led the transition from Firebase to a fault-tolerant MongoDB query server, reducing read latency by 10x with zero downtime during cutover.",
+        "Architected a camera plugin with CV-driven exposure control that pre-filtered non-conformant frames, cutting the user retake rate by 95% (from ~35% to <2%)."
       ],
       "stack": []
     },
@@ -158,15 +156,59 @@
       "responsibilities": [
         "Built an on-device caching and syncing layer that enabled offline access for 90% of basic functionality and reduced server load by 40% through request batching.",
         "Deployed edge ML on mobile via quantized TFLite models, decreasing bad image captures by 90%.",
-        "Engineered a server-driven UI system with local caching, enabling dynamic updates without client deployments."
+        "Engineered a server-driven UI system with local caching that enabled rapid A/B testing of cross-selling ad strategies without client redeployments."
       ],
       "additionalResponsibilities": [
-        "Developed scripts used to validate Key Performance Indicators (KPIs) for investors, providing data for the company's $2M Seed."
+        "Developed scripts used to validate Key Performance Indicators (KPIs) for investors, providing data for the company's $2M Seed.",
+        "Used BigQuery to analyze in-app event data, enabling A/B testing that cut feature rollout cycles by 50% to ~2 weeks."
       ],
       "stack": []
     }
   ],
   "projects": [
+    {
+      "name": "surus: Hybrid LLM Memory Engine",
+      "isActive": true,
+      "type": "personal",
+      "stack": [
+        "Python",
+        "Qdrant",
+        "Tantivy",
+        "DuckDB",
+        "Neo4j",
+        "PyTorch"
+      ],
+      "description": "A 4-backend hybrid retrieval engine for long-term LLM memory, fusing semantic, lexical, temporal, and graph signals.",
+      "highlights": [
+        "Designing a 4-backend hybrid memory engine fusing Qdrant (filterable HNSW), Tantivy (BM25), DuckDB (temporal range), and Neo4j+GDS (spreading-activation PageRank) via RRF and cross-encoder reranking.",
+        "Built a bi-temporal validity model that records when a fact became true, when it was invalidated, and when the contradiction was learned, enabling correct point-in-time queries over evolving knowledge.",
+        "[Pending benchmark] Achieved x% on the LoCoMo long-term memory benchmark (Phase 0 oracle baseline)."
+      ],
+      "url": "",
+      "github": "",
+      "startDate": "2026-05",
+      "endDate": "Present"
+    },
+    {
+      "name": "lazyssh: SSH Workflow Manager",
+      "isActive": true,
+      "type": "personal",
+      "stack": [
+        "Go",
+        "Linux",
+        "Bash"
+      ],
+      "description": "A Go-based TUI + headless CLI for managing SSH hosts, with always-on connection multiplexing and an agent-controllable interface.",
+      "highlights": [
+        "Built a Go-based SSH workflow manager (TUI + headless CLI) where every spawned connection auto-multiplexes, skipping repeat 2FA prompts and cutting per-connect latency by 30-60%.",
+        "Designed an atomic ssh_config writer with rolling backups and order/comment/indent preservation, plus a self-healing TOML sidecar that round-trips host renames.",
+        "Exposed every TUI action as a versioned-JSON CLI subcommand to enable headless agent (Claude Code, MCP) control of remote SSH workflows."
+      ],
+      "url": "",
+      "github": "",
+      "startDate": "2026-05",
+      "endDate": "Present"
+    },
     {
       "name": "Domin: Synthetic Data Generator",
       "isActive": true,
@@ -180,7 +222,7 @@
       "description": "A Python package that orchestrates high-throughput data generation from a single config file.",
       "highlights": [
         "Developed a Python package that orchestrates high-throughput data generation from a single config file.",
-        "Implemented an asynchronous scheduler with automated retry logic that guarantees 100% task completion across randomized simulation environments."
+        "Implemented an asynchronous scheduler with retry-on-failure logic that completes the full target sample count under transient simulation failures."
       ],
       "url": "",
       "github": "https://github.com/nimit/domin",
@@ -188,18 +230,18 @@
       "endDate": "Present"
     },
     {
-      "name": "Mako: Distributed Database Optimization",
+      "name": "Mako: Read-Path Optimization on a Spanner-like Database",
       "isActive": false,
-      "type": "opensource",
+      "type": "course",
       "stack": [
         "C++",
         "Distributed Systems",
         "MVCC"
       ],
-      "description": "My work on optimizing a Spanner-like distributed database with speculative execution and OCC.",
+      "description": "Course extension to a Spanner-like, geo-replicated OLTP database, focused on read-path performance.",
       "highlights": [
-        "Optimized a geo-replicated, OLTP database with a read-only fast path to achieve 3.4x higher throughput.",
-        "Implemented Snapshot Isolation and Follower Reads to enable near-linear read scalability and zero read-only aborts."
+        "Designed and implemented a read-only fast path for a Spanner-like, geo-replicated OLTP database, achieving 3.4x higher read throughput.",
+        "Used Snapshot Isolation with Follower Reads to enable linear read scalability and eliminate read-only aborts."
       ],
       "url": "",
       "github": "https://github.com/nimit/mako",
@@ -219,8 +261,8 @@
       ],
       "description": "",
       "highlights": [
-        "Developed a text-based social platform feature processing streamed messages through a multi-agent directed graph.",
-        "Orchestrated a memory layer using Redis that serializes user traits into dynamic profiles for long-term personalization."
+        "Built a LangGraph multi-agent pipeline that consumes streamed posts from the text-based social platform series.so via a Kafka queue.",
+        "Backed the agent graph with a Redis-based memory layer that serializes per-user traits into persistent profiles for continuity across conversations."
       ],
       "url": "",
       "github": "https://github.com/nimit/symbiosis-ai",
@@ -232,14 +274,14 @@
       "isActive": false,
       "type": "personal",
       "stack": [
-        "C",
+        "C++",
         "PostgreSQL",
         "CMake"
       ],
       "description": "A PostgreSQL extension written in C++ that adds no-maintenance GenAI querying functionality using Clickhouse's AI SDK",
       "highlights": [
-        "Enabled natural language querying with an internal schema cache to ensure non-blocking execution.",
-        "Sustained 200 active, concurrent connections via pgbench on a 1M row database with zero throughput degradation."
+        "Eliminated per-query schema lookups against Postgres by maintaining an in-process schema cache refreshed out-of-band on DDL changes.",
+        "Verified zero throughput overhead vs baseline Postgres via pgbench at 200 concurrent connections on a 1M-row database."
       ],
       "url": "",
       "github": "https://github.com/nimit/whatsinmypg",
@@ -259,7 +301,7 @@
       "description": "An implementation of the Raft distributed consensus protocol for a simple key-value store",
       "highlights": [
         "Engineered a fault-tolerant KV store implementing Leader Election and Log Replication per the Raft protocol.",
-        "Implemented request batching to reduce RPCs by 20% and enable recovery of lagging followers upto 80% faster."
+        "Implemented request batching to reduce RPCs by 20% and enable recovery of lagging followers up to 80% faster."
       ],
       "url": "",
       "github": "https://github.com/nimit/raft-kv",
@@ -303,45 +345,340 @@
       "description": "AI-native real-world evaluation platform for new grad SWEs",
       "highlights": [
         "Developed a platform to provision isolated Docker-based execution environments with <1s latency, enabling an IDE and real-time code execution for end-users.",
-        "Built a custom LRU cache plugin for Fastify.js to manage active container sessions and optimize server memory.",
-        "Conducted private beta testing to iterate on product features, positioning the platform to bridge skill gaps for early-career engineers by providing real-world system engineering challenges."
+        "Wrote a custom Fastify.js plugin with LRU eviction over active container sessions, bounding server memory under concurrent user load."
       ],
       "url": "https://challenges.studio",
       "github": "",
       "startDate": "2025-05",
       "endDate": "2025-05"
+    },
+    {
+      "name": "Spotifind: AI Navigation for the Visually Impaired",
+      "isActive": false,
+      "type": "personal",
+      "stack": [
+        "Python",
+        "JavaScript",
+        "MongoDB",
+        "Hugging Face",
+        "NLP"
+      ],
+      "description": "Voice-activated AI navigation system for the visually impaired with integrated prescription management. Won HopperHacks 2025 (Healthcare Track) and HackNYU 2025 (Streamlit Track).",
+      "highlights": [
+        "2x Hackathon Winner: HopperHacks 2025 (Healthcare Track) and HackNYU 2025 (Streamlit Track).",
+        "Built a real-time voice-activated navigation pipeline combining YOLO v12 object detection (80+ classes), Depth Anything depth mapping, and semantic segmentation to deliver obstacle-free guidance.",
+        "Layered a prescription-management subsystem on top - OCR-based prescription upload, medicine-bottle recognition, and multilingual support via Google Gemini (100+ languages)."
+      ],
+      "url": "https://devpost.com/software/spotifind-rx",
+      "github": "",
+      "startDate": "2025-02",
+      "endDate": "2025-02"
+    },
+    {
+      "name": "Encoder-LM Fine-Tuning for Humor Preference Ranking",
+      "isActive": false,
+      "type": "course",
+      "stack": [
+        "Python",
+        "PyTorch",
+        "BERT",
+        "Hugging Face",
+        "NLP"
+      ],
+      "description": "Course project: LoRA fine-tuning of BERT/RoBERTa for humor preference ranking (which of two texts is funnier), with a few-shot prompt baseline for comparison.",
+      "highlights": [
+        "Fine-tuned BERT and RoBERTa via Low-Rank Adaptation (LoRA) on 120K+ crowdsourced text samples for humor preference ranking (which of two texts is funnier).",
+        "Built a few-shot prompt evaluation pipeline to benchmark base-model alignment against the crowdsourced ground-truth rankings."
+      ],
+      "url": "",
+      "github": "https://github.com/nimit/analyzing-humor",
+      "startDate": "2024-11",
+      "endDate": "2024-11"
+    },
+    {
+      "name": "researchGPT: AI-Powered Research Assistant",
+      "isActive": false,
+      "type": "personal",
+      "stack": [
+        "Flask",
+        "BERT",
+        "Hugging Face",
+        "Vector Database",
+        "NLP"
+      ],
+      "description": "RAG-based research assistant for parsing and querying scientific PDFs; built in 48 hours with a team of 3 and ranked the most-viewed and most-liked project on Devfolio's Stranger Hacks.",
+      "highlights": [
+        "Built a RAG pipeline that chunks scientific PDFs into vector-DB embeddings, retrieved at query time as context for an LLM.",
+        "Shipped the system end-to-end behind a custom Flask server in 48 hours, alongside a 3-person team."
+      ],
+      "url": "https://devfolio.co/projects/researchgpt-the-aipowered-research-assistant-1ecc",
+      "github": "",
+      "startDate": "2023-04",
+      "endDate": "2023-04"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Scaling State-Space Models on Multiple GPUs with Tensor Parallelism",
+      "publisher": "IEEE ICDCS 2026 (Accepted)",
+      "releaseDate": "2026-02-24",
+      "url": "https://arxiv.org/abs/2602.21144",
+      "summary": "Communication-efficient tensor parallelism for selective SSM inference. Reports 1.6-2.1x throughput on 2 GPUs and 2.6-4.0x on 4 GPUs over FSDP, plus 10-18% gains from quantized AllReduce. With Anurag Dutt, Hazem Masarani, and Anshul Gandhi."
+    }
+  ],
+  "honors": [
+    {
+      "name": "Streamlit Track Winner",
+      "issuer": "HackNYU 2025",
+      "date": "2025-02",
+      "url": "https://devpost.com/software/spotifind-4i8lts",
+      "summary": "Spotifind."
+    },
+    {
+      "name": "Healthcare Track Winner",
+      "issuer": "HopperHacks 2025 (Stony Brook University)",
+      "date": "2025-02",
+      "url": "https://devpost.com/software/spotifind-rx",
+      "summary": "Spotifind."
+    },
+    {
+      "name": "Overall 3rd Place",
+      "issuer": "CodeOlympiad Hackathon (India)",
+      "date": "2023-07",
+      "url": "https://www.linkedin.com/posts/nimit-s_i-am-elated-to-share-that-i-have-achieved-activity-6959927981238595584-OLfP"
     }
   ],
   "skills": [
     {
-      "name": "HTML",
-      "icon": "simple-icons:html5",
+      "name": "Python",
+      "icon": "mdi:language-python",
       "level": "Advanced",
       "keywords": [
-        "Web Development",
+        "Backend",
+        "Machine Learning",
+        "Scripting"
+      ]
+    },
+    {
+      "name": "C++",
+      "icon": "mdi:language-cpp",
+      "level": "Advanced",
+      "keywords": [
+        "Systems",
+        "Distributed Systems",
+        "Performance"
+      ]
+    },
+    {
+      "name": "C",
+      "icon": "mdi:language-c",
+      "level": "Intermediate",
+      "keywords": [
+        "Linux Kernel",
+        "Systems"
+      ]
+    },
+    {
+      "name": "Go",
+      "icon": "simple-icons:go",
+      "level": "Intermediate",
+      "keywords": [
+        "Backend",
+        "Systems",
+        "CLI"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "icon": "simple-icons:typescript",
+      "level": "Advanced",
+      "keywords": [
+        "Backend",
+        "Frontend",
+        "Type Safety"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "icon": "mdi:language-javascript",
+      "level": "Advanced",
+      "keywords": [
+        "Backend",
         "Frontend"
+      ]
+    },
+    {
+      "name": "Java",
+      "icon": "simple-icons:java",
+      "level": "Intermediate",
+      "keywords": [
+        "Backend",
+        "Object-Oriented"
+      ]
+    },
+    {
+      "name": "Rust",
+      "icon": "simple-icons:rust",
+      "level": "Intermediate",
+      "keywords": [
+        "Systems",
+        "Performance"
+      ]
+    },
+    {
+      "name": "PyTorch",
+      "icon": "simple-icons:pytorch",
+      "level": "Advanced",
+      "keywords": [
+        "Machine Learning",
+        "Distributed Training",
+        "Inference"
+      ]
+    },
+    {
+      "name": "Hugging Face",
+      "icon": "simple-icons:huggingface",
+      "level": "Intermediate",
+      "keywords": [
+        "Transformers",
+        "NLP",
+        "Model Hub"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "icon": "simple-icons:nodedotjs",
+      "level": "Advanced",
+      "keywords": [
+        "Backend",
+        "JavaScript Runtime"
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "icon": "simple-icons:spring",
+      "level": "Intermediate",
+      "keywords": [
+        "Backend",
+        "Java",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Flask",
+      "icon": "simple-icons:flask",
+      "level": "Intermediate",
+      "keywords": [
+        "Backend",
+        "Python"
       ]
     },
     {
       "name": "MongoDB",
       "icon": "simple-icons:mongodb",
-      "level": "Beginner",
+      "level": "Advanced",
       "keywords": [
-        "Databases",
-        "File",
-        "Data Storage",
+        "NoSQL",
+        "Document Store",
         "Backend"
       ]
     },
     {
       "name": "PostgreSQL",
       "icon": "simple-icons:postgresql",
-      "level": "Beginner",
+      "level": "Intermediate",
       "keywords": [
-        "Backend",
-        "Databases",
         "SQL",
-        "Relational Database"
+        "Relational",
+        "OLTP"
+      ]
+    },
+    {
+      "name": "Redis",
+      "icon": "simple-icons:redis",
+      "level": "Intermediate",
+      "keywords": [
+        "Caching",
+        "In-Memory"
+      ]
+    },
+    {
+      "name": "Neo4j",
+      "icon": "simple-icons:neo4j",
+      "level": "Intermediate",
+      "keywords": [
+        "Graph Database"
+      ]
+    },
+    {
+      "name": "Qdrant",
+      "icon": "simple-icons:qdrant",
+      "level": "Intermediate",
+      "keywords": [
+        "Vector Database",
+        "HNSW"
+      ]
+    },
+    {
+      "name": "DuckDB",
+      "icon": "simple-icons:duckdb",
+      "level": "Intermediate",
+      "keywords": [
+        "OLAP",
+        "Columnar"
+      ]
+    },
+    {
+      "name": "Kafka",
+      "icon": "simple-icons:apachekafka",
+      "level": "Intermediate",
+      "keywords": [
+        "Streaming",
+        "Event-Driven"
+      ]
+    },
+    {
+      "name": "Docker",
+      "icon": "simple-icons:docker",
+      "level": "Advanced",
+      "keywords": [
+        "Containers",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Linux",
+      "icon": "simple-icons:linux",
+      "level": "Advanced",
+      "keywords": [
+        "OS",
+        "Systems"
+      ]
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "icon": "simple-icons:amazonaws",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud"
+      ]
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "icon": "simple-icons:googlecloud",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud"
+      ]
+    },
+    {
+      "name": "Distributed Systems",
+      "icon": "mdi:server-network",
+      "level": "Advanced",
+      "keywords": [
+        "Consensus",
+        "Replication",
+        "Sharding"
       ]
     },
     {
@@ -350,18 +687,7 @@
       "level": "Advanced",
       "keywords": [
         "Version Control",
-        "Collaboration",
-        "Source Code"
-      ]
-    },
-    {
-      "name": "Linux",
-      "icon": "simple-icons:linux",
-      "level": "Beginner",
-      "keywords": [
-        "OS",
-        "Scripting",
-        "Automation"
+        "Collaboration"
       ]
     }
   ],
